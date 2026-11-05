@@ -1,156 +1,113 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Amazon</title>
-    <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Shop electronics, fashion and everyday essentials at CloneAmazon.">
+  <title>CloneAmazon | Online Shopping</title>
+  <style>
+    :root{--navy:#131921;--navy2:#232f3e;--navy3:#37475a;--yellow:#febd69;--yellow2:#ffd814;--ink:#0f1111;--muted:#565959;--page:#e3e6e6}
+    *{box-sizing:border-box}body{margin:0;font-family:Arial,Helvetica,sans-serif;color:var(--ink);background:var(--page)}a{color:inherit;text-decoration:none}button,input{font:inherit}
+    .topbar{min-height:66px;background:var(--navy);color:#fff;display:flex;align-items:center;gap:18px;padding:10px 22px}
+    .brand{font-size:27px;font-weight:800;letter-spacing:-1.5px;white-space:nowrap}.brand span{color:var(--yellow)}
+    .delivery{font-size:12px;line-height:1.3;white-space:nowrap}.delivery strong{display:block;font-size:14px}
+    .search{height:42px;display:flex;flex:1;min-width:120px;border-radius:5px;overflow:hidden}.search select{width:58px;border:0;background:#e6e6e6;padding:0 5px;color:#333}.search input{min-width:0;flex:1;border:0;padding:0 12px;outline:none}.search button{width:48px;border:0;background:var(--yellow);font-size:20px;cursor:pointer}
+    .top-link{font-size:12px;white-space:nowrap;line-height:1.25}.top-link strong{display:block;font-size:14px}.cart{font-size:14px;font-weight:bold;white-space:nowrap}.cart b{font-size:24px;color:var(--yellow)}
+    .subnav{height:40px;background:var(--navy2);color:white;display:flex;align-items:center;gap:22px;padding:0 22px;font-size:13px;overflow:auto;white-space:nowrap}.subnav a:hover{text-decoration:underline}
+    .hero{min-height:290px;padding:42px 6%;display:flex;align-items:flex-start;background:linear-gradient(90deg,rgba(0,0,0,.68),rgba(0,0,0,.08)),url('https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=1600') center/cover;color:white}
+    .hero-copy{max-width:510px}.hero h1{font-size:clamp(30px,5vw,48px);margin:0 0 12px}.hero p{font-size:17px;line-height:1.5;margin:0 0 22px}.hero a{display:inline-block;background:var(--yellow2);padding:12px 22px;border-radius:22px;font-weight:bold;color:#111}
+    main{max-width:1500px;margin:-24px auto 0;padding:0 22px;position:relative}.category-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.category-card,.products-panel{background:#fff;padding:20px;margin-bottom:20px}.category-card h2,.products-panel h2{font-size:21px;margin:0 0 14px}.category-card img{width:100%;height:170px;object-fit:cover}.category-card a,.see-more{display:inline-block;color:#007185;font-size:13px;margin-top:12px}.category-card a:hover,.see-more:hover{color:#c7511f;text-decoration:underline}
+    .section-heading{display:flex;align-items:center;justify-content:space-between;gap:12px}.product-grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:18px}.product{border:1px solid #eee;border-radius:5px;padding:14px;display:flex;flex-direction:column;min-width:0}.product img{width:100%;height:170px;object-fit:contain;margin-bottom:10px}.product h3{font-size:15px;line-height:1.4;margin:5px 0 8px}.rating{color:#de7921;font-size:14px;margin-bottom:7px}.price{font-size:19px;font-weight:bold;margin:4px 0}.price small{font-size:12px;font-weight:normal}.product p{font-size:12px;color:var(--muted);margin:5px 0 12px}.product button{margin-top:auto;background:var(--yellow2);border:1px solid #fcd200;border-radius:18px;padding:9px 12px;cursor:pointer}.product button:hover,.hero a:hover{background:#f7ca00}
+    .deal-strip{background:#fff;padding:18px 20px;margin-bottom:20px;display:flex;align-items:center;justify-content:space-between;gap:12px}.deal-strip strong{font-size:20px}.deal-strip span{color:#b12704;font-size:14px}
+    footer{background:var(--navy2);color:#fff;text-align:center;margin-top:25px}.back-top{display:block;background:var(--navy3);padding:15px;font-size:13px}.footer-main{padding:30px 15px;font-size:13px;line-height:1.8}.footer-main strong{font-size:22px}
+    @media(max-width:900px){.category-grid,.product-grid{grid-template-columns:repeat(2,minmax(0,1fr))}.delivery{display:none}.topbar{gap:12px;padding:10px 14px}.hero{min-height:260px}}
+    @media(max-width:560px){.topbar{flex-wrap:wrap}.brand{font-size:24px}.search{order:3;flex-basis:100%}.top-link{font-size:11px}.top-link strong{font-size:12px}.subnav{padding:0 14px;gap:16px}.hero{min-height:260px;padding:30px 22px}.hero p{font-size:15px}main{padding:0 12px}.category-grid,.product-grid{grid-template-columns:1fr 1fr;gap:10px}.category-card,.products-panel{padding:12px}.category-card h2,.products-panel h2{font-size:17px}.category-card img{height:120px}.product{padding:9px}.product img{height:125px}.product h3{font-size:13px}.price{font-size:16px}.deal-strip{padding:14px;align-items:flex-start;flex-direction:column}}
+  </style>
 </head>
 <body>
-   
-<!DOCTYPE html>
-<html>
-<head>
-    <title>My Online Store</title>
-
-    <style>
-        body {
-            font-family: Arial;
-            margin: 0;
-            background-color: #f2f2f2;
-        }
-
-        header {
-            background-color: #232f3e;
-            color: white;
-            padding: 20px;
-            text-align: center;
-        }
-
-        nav {
-            background-color: #37475a;
-            padding: 12px;
-            text-align: center;
-        }
-
-        nav a {
-            color: white;
-            text-decoration: none;
-            margin: 15px;
-        }
-
-        .welcome {
-            text-align: center;
-            padding: 30px;
-        }
-
-        .products {
-            display: flex;
-            justify-content: center;
-            gap: 20px;
-            flex-wrap: wrap;
-            padding: 20px;
-        }
-
-        .product {
-            background-color: white;
-            padding: 15px;
-            width: 200px;
-            text-align: center;
-            border: 1px solid lightgray;
-        }
-
-        .product img {
-            width: 150px;
-            height: 130px;
-            object-fit: contain;
-        }
-
-        button {
-            background-color: orange;
-            border: none;
-            padding: 10px;
-            cursor: pointer;
-        }
-
-        footer {
-            background-color: #232f3e;
-            color: white;
-            text-align: center;
-            padding: 15px;
-            margin-top: 30px;
-        }
-    </style>
-</head>
-
-<body>
-
-    <header>
-        <h1>My Online Store</h1>
-        <p>Everything you need in one place!</p>
-    </header>
-
-    <nav>
-        <a href="#">Home</a>
-        <a href="#">Products</a>
-        <a href="#">About</a>
-        <a href="#">Contact</a>
+  <header>
+    <div class="topbar">
+      <a class="brand" href="#" aria-label="CloneAmazon home">clone<span>amazon</span></a>
+      <div class="delivery">Deliver to<strong>India</strong></div>
+      <form class="search" id="searchForm" role="search">
+        <select aria-label="Search category"><option>All</option><option>Electronics</option><option>Fashion</option></select>
+        <input id="searchInput" type="search" placeholder="Search CloneAmazon" aria-label="Search products">
+        <button type="submit" aria-label="Search">⌕</button>
+      </form>
+      <a class="top-link" href="#"><span>Hello, sign in</span><strong>Account &amp; Lists</strong></a>
+      <a class="top-link" href="#"><span>Returns</span><strong>&amp; Orders</strong></a>
+      <a class="cart" href="#products" aria-label="Shopping cart">🛒 Cart <b id="cartCount">0</b></a>
+    </div>
+    <nav class="subnav" aria-label="Main navigation">
+      <a href="#categories">☰ All</a><a href="#deals">Today's Deals</a><a href="#products">Best Sellers</a><a href="#categories">Mobiles</a><a href="#products">Electronics</a><a href="#products">Fashion</a><a href="#footer">Customer Service</a>
     </nav>
+  </header>
 
-    <div class="welcome">
-        <h2>Welcome to My Online Store</h2>
-        <p>Shop your favourite products at affordable prices.</p>
+  <section class="hero">
+    <div class="hero-copy">
+      <h1>Everything you love, all in one place.</h1>
+      <p>Discover great finds across electronics, fashion and everyday essentials.</p>
+      <a href="#products">Shop today's picks</a>
     </div>
+  </section>
 
-    <h2 style="text-align:center;">Our Products</h2>
+  <main>
+    <section class="category-grid" id="categories" aria-label="Shopping categories">
+      <article class="category-card"><h2>Electronics &amp; gadgets</h2><img src="https://images.unsplash.com/photo-1498049794561-7780e7231661?w=500" alt="Electronics and gadgets"><a href="#products">Explore electronics</a></article>
+      <article class="category-card"><h2>Style your day</h2><img src="https://images.unsplash.com/photo-1483985988355-763728e1935b?w=500" alt="Fashion clothing"><a href="#products">Explore fashion</a></article>
+      <article class="category-card"><h2>Upgrade your setup</h2><img src="https://images.unsplash.com/photo-1493666438817-866a91353ca9?w=500" alt="Modern home interior"><a href="#products">Explore home</a></article>
+      <article class="category-card"><h2>Fitness essentials</h2><img src="https://images.unsplash.com/photo-1517836357463-d25dfeac3438?w=500" alt="Fitness and workout"><a href="#products">Explore fitness</a></article>
+    </section>
 
-    <div class="products">
+    <section class="deal-strip" id="deals"><strong>Today's featured deals</strong><span>Great picks. Great prices. Every day.</span></section>
 
-        <!-- Mobile Phone -->
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=300"
-                 alt="Mobile Phone">
-            <h3>Mobile Phone</h3>
-            <p>Price: ₹10,000</p>
-            <button>Buy Now</button>
-        </div>
+    <section class="products-panel" id="products">
+      <div class="section-heading"><h2>Popular products</h2><a class="see-more" href="#products">See all</a></div>
+      <div class="product-grid" id="productGrid">
+        <article class="product" data-name="Mobile Phone">
+          <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?w=500" alt="Mobile phone">
+          <h3>Smartphone – 128 GB</h3><div class="rating">★★★★★ <span style="color:#007185">4.5</span></div><div class="price">₹10,999</div><p>Inclusive of all taxes</p><button type="button" class="add-cart">Add to Cart</button>
+        </article>
+        <article class="product" data-name="Headphones">
+          <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=500" alt="Wireless headphones">
+          <h3>Wireless Over-Ear Headphones</h3><div class="rating">★★★★☆ <span style="color:#007185">4.2</span></div><div class="price">₹1,499</div><p>Inclusive of all taxes</p><button type="button" class="add-cart">Add to Cart</button>
+        </article>
+        <article class="product" data-name="Smart Watch">
+          <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=500" alt="Smart watch">
+          <h3>Smart Watch with Fitness Tracking</h3><div class="rating">★★★★☆ <span style="color:#007185">4.3</span></div><div class="price">₹2,199</div><p>Inclusive of all taxes</p><button type="button" class="add-cart">Add to Cart</button>
+        </article>
+        <article class="product" data-name="Shoes">
+          <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=500" alt="Red running shoes">
+          <h3>Everyday Running Shoes</h3><div class="rating">★★★★★ <span style="color:#007185">4.6</span></div><div class="price">₹1,799</div><p>Inclusive of all taxes</p><button type="button" class="add-cart">Add to Cart</button>
+        </article>
+      </div>
+      <p id="noResults" hidden>No matching products found. Try another search.</p>
+    </section>
+  </main>
 
-        <!-- Headphones -->
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1546435770-a3e426bf472b?w=300"
-                 alt="Headphones">
-            <h3>Headphones</h3>
-            <p>Price: ₹1,000</p>
-            <button>Buy Now</button>
-        </div>
-
-        <!-- Smart Watch -->
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=300"
-                 alt="Smart Watch">
-            <h3>Smart Watch</h3>
-            <p>Price: ₹2,000</p>
-            <button>Buy Now</button>
-        </div>
-
-        <!-- Shoes -->
-        <div class="product">
-            <img src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?w=300"
-                 alt="Shoes">
-            <h3>Shoes</h3>
-            <p>Price: ₹1,500</p>
-            <button>Buy Now</button>
-        </div>
-
-    </div>
-
-    <footer>
-        <p>© 2026 My Online Store</p>
-        <p>Thank you for visiting!</p>
-    </footer>
-
-</body>
-</html>
-
+  <footer id="footer"><a class="back-top" href="#">Back to top ↑</a><div class="footer-main"><strong>clone<span style="color:#febd69">amazon</span></strong><br>Inspired by Amazon. Built as a learning project.<br>© 2026 CloneAmazon</div></footer>
+  <script>
+    let cartCount = 0;
+    document.querySelectorAll('.add-cart').forEach(button => {
+      button.addEventListener('click', () => {
+        cartCount += 1;
+        document.getElementById('cartCount').textContent = cartCount;
+        button.textContent = 'Added ✓';
+        setTimeout(() => button.textContent = 'Add to Cart', 900);
+      });
+    });
+    document.getElementById('searchForm').addEventListener('submit', event => {
+      event.preventDefault();
+      const query = document.getElementById('searchInput').value.trim().toLowerCase();
+      let visible = 0;
+      document.querySelectorAll('.product').forEach(product => {
+        const match = product.textContent.toLowerCase().includes(query) || product.dataset.name.toLowerCase().includes(query);
+        product.hidden = !match;
+        if (match) visible += 1;
+      });
+      document.getElementById('noResults').hidden = visible !== 0;
+      document.getElementById('products').scrollIntoView({behavior:'smooth'});
+    });
+  </script>
 </body>
 </html>
